@@ -26,7 +26,6 @@ export interface Settings {
 
   // Appearance settings
   theme: 'light' | 'dark' | 'system';
-  show3D: boolean;
   language: 'en' | 'zh';
 }
 

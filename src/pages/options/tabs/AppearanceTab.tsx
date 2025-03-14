@@ -37,16 +37,6 @@ const AppearanceTab: React.FC<TabProps> = ({ settings, onSettingsChange }) => {
 						<option value="zh">{t('settings.appearance.language_zh')}</option>
 					</select>
 				</div>
-				<div className="setting-item">
-					<label>
-						<input
-							type="checkbox"
-							checked={settings.show3D}
-							onChange={(e) => updateSetting('show3D', e.target.checked)}
-						/>
-						{t('settings.appearance.enable_3d')}
-					</label>
-				</div>
 			</div>
 		</section>
 	);

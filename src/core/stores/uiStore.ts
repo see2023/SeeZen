@@ -5,14 +5,12 @@ export type Theme = 'light' | 'dark' | 'system';
 interface UIState {
   // Settings
   theme: Theme;
-  show3D: boolean;
   soundVolume: number;
   activeTab: string;
   
   // Actions
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
-  toggle3D: () => void;
   setVolume: (volume: number) => void;
   setActiveTab: (tab: string) => void;
   updateSettings: (settings: Partial<UISettings>) => void;
@@ -20,14 +18,12 @@ interface UIState {
 
 interface UISettings {
   theme: Theme;
-  show3D: boolean;
   soundVolume: number;
 }
 
 const useUIStore = create<UIState>((set, get) => ({
   // Settings
   theme: 'light',
-  show3D: true,
   soundVolume: 0.7,
   activeTab: 'timer',
   
@@ -63,19 +59,6 @@ const useUIStore = create<UIState>((set, get) => ({
     const { theme } = get();
     const newTheme: Theme = theme === 'light' ? 'dark' : 'light';
     get().setTheme(newTheme);
-  },
-  
-  toggle3D: () => {
-    const { show3D } = get();
-    set({ show3D: !show3D });
-    
-    // Save to Chrome storage
-    chrome.storage.sync.set({
-      uiSettings: {
-        ...get(),
-        show3D: !show3D
-      }
-    });
   },
   
   setVolume: (volume: number) => {

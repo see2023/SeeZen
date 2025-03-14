@@ -18,7 +18,7 @@ import Toast from './components/Toast';
 import ConfirmDialog from './components/ConfirmDialog';
 
 const Options: React.FC = () => {
-	const { theme, show3D, soundVolume, setTheme, toggle3D, setVolume, updateSettings } = useUIStore();
+	const { theme, soundVolume, setTheme, setVolume, updateSettings } = useUIStore();
 	const { language, setLanguage } = useLanguageStore();
 	const { settings, soundSettings, updateSettings: updateTimerSettings, updateSoundSettings } = useTimerStore();
 	const { t } = useTranslation();
@@ -67,7 +67,6 @@ const Options: React.FC = () => {
 
 		// 外观设置
 		theme: 'light' as 'light' | 'dark' | 'system',
-		show3D: true,
 		language: 'en' as 'en' | 'zh'
 	});
 
@@ -77,7 +76,6 @@ const Options: React.FC = () => {
 		setLocalSettings(prevState => ({
 			...prevState,
 			theme,
-			show3D,
 			soundVolume,
 			language,
 			// 从 blockerStore 获取并转换设置
@@ -111,7 +109,7 @@ const Options: React.FC = () => {
 	// 当全局状态改变时更新本地状态
 	useEffect(() => {
 		refreshSettings();
-	}, [theme, show3D, soundVolume, language, settings, soundSettings]);
+	}, [theme, soundVolume, language, settings, soundSettings]);
 
 	const goBackToPopup = () => {
 		window.close(); // 关闭选项页，如果通过扩展图标打开的popup仍然存在
@@ -147,9 +145,6 @@ const Options: React.FC = () => {
 			setLanguage(newSettings.language);
 		}
 
-		if (newSettings.show3D !== undefined && newSettings.show3D !== localSettings.show3D) {
-			toggle3D();
-		}
 
 		if (newSettings.soundVolume !== undefined && newSettings.soundVolume !== localSettings.soundVolume) {
 			setVolume(newSettings.soundVolume);
@@ -160,7 +155,6 @@ const Options: React.FC = () => {
 		// 更新 UI 设置
 		updateSettings({
 			theme: localSettings.theme,
-			show3D: localSettings.show3D,
 			soundVolume: localSettings.soundVolume
 		});
 
@@ -232,7 +226,6 @@ const Options: React.FC = () => {
 
 			// 外观设置
 			theme: 'light' as 'light' | 'dark' | 'system',
-			show3D: true,
 			language: localSettings.language
 		};
 
@@ -241,7 +234,6 @@ const Options: React.FC = () => {
 		// 更新 UI 设置
 		updateSettings({
 			theme: defaultSettings.theme,
-			show3D: defaultSettings.show3D,
 			soundVolume: defaultSettings.soundVolume
 		});
 
