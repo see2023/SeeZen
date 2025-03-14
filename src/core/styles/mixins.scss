@@ -1,0 +1,154 @@
+@import 'variables';
+
+// 响应式设计mixins
+@mixin for-size($size) {
+  @if $size == small {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $size == medium {
+    @media (min-width: #{$breakpoint-sm + 1px}) and (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $size == large {
+    @media (min-width: #{$breakpoint-md + 1px}) {
+      @content;
+    }
+  }
+}
+
+// 排版mixins
+@mixin heading-xxl {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-compact;
+}
+
+@mixin heading-xl {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-compact;
+}
+
+@mixin heading-lg {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-compact;
+}
+
+@mixin heading-md {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+}
+
+@mixin body-text {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-normal;
+}
+
+@mixin small-text {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-normal;
+}
+
+// 组件mixins
+@mixin card {
+  background-color: var(--card-bg);
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-default;
+  padding: $spacing-md;
+  transition: box-shadow $transition-normal $timing-function, 
+              transform $transition-normal $timing-function;
+  
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+}
+
+@mixin button-primary {
+  background: $gradient-primary;
+  color: white;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-md;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-md;
+  border: none;
+  box-shadow: $shadow-default;
+  transition: filter $transition-fast $timing-function,
+              transform $transition-fast $timing-function,
+              box-shadow $transition-fast $timing-function;
+  
+  &:hover {
+    filter: brightness(1.1);
+    box-shadow: $shadow-active;
+  }
+  
+  &:active {
+    filter: brightness(0.95);
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@mixin button-secondary {
+  background: transparent;
+  color: $color-primary;
+  border: 1px solid $color-primary;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-md;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-md;
+  transition: background-color $transition-fast $timing-function,
+              color $transition-fast $timing-function;
+  
+  &:hover {
+    background-color: rgba($color-primary, 0.1);
+  }
+  
+  &:active {
+    background-color: rgba($color-primary, 0.2);
+    transform: scale(0.98);
+  }
+}
+
+// 辅助功能mixins
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin focus-outline {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
+// 主题相关mixins
+@mixin dark-theme {
+  --bg-color: #{$color-dark-bg};
+  --card-bg: #{$color-dark-card};
+  --text-color: #{$color-dark-text};
+  --text-secondary: #{$color-dark-text-secondary};
+}
+
+@mixin light-theme {
+  --bg-color: #{$color-light-bg};
+  --card-bg: #{$color-light-card};
+  --text-color: #{$color-light-text};
+  --text-secondary: #{$color-light-text-secondary};
+} 

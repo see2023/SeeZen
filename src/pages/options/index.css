@@ -1,0 +1,469 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 从variables.scss提取的值 */
+  --color-primary: #FF7E36;
+  --color-primary-dark: #E65A00;
+  --color-primary-light: #FFA76C;
+  
+  --color-secondary: #FF6347;
+  --color-tertiary: #4ECDC4;
+  
+  /* 主题变量 */
+  --bg-color: #FFFFFF;
+  --card-bg: #F5F5F5;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  
+  /* 深色主题将通过body.theme-dark应用不同值 */
+}
+
+/* 深色主题 */
+body.theme-dark {
+  --bg-color: #222222;
+  --card-bg: #333333;
+  --text-color: #DDDDDD;
+  --text-secondary: #AAAAAA;
+}
+
+body {
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+                 Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.options-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  left: 0;
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+header h1 {
+  font-size: 28px;
+  color: var(--color-primary);
+}
+
+.settings-section {
+  margin-bottom: 40px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.settings-section h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+
+.settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.setting-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.setting-item label {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-color);
+}
+
+.setting-item input[type="number"],
+.setting-item input[type="text"],
+.setting-item select {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.setting-item textarea {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.setting-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+}
+
+.setting-item input[type="range"] {
+  width: 100%;
+  accent-color: var(--color-primary);
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary, .save-btn {
+  background: linear-gradient(45deg, #FF7E36 0%, #FFA76C 100%);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover, .save-btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 12px rgba(255, 126, 54, 0.25);
+}
+
+.btn-primary:active, .save-btn:active {
+  filter: brightness(0.95);
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary, .reset-btn {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-secondary:hover, .reset-btn:hover {
+  background-color: rgba(255, 126, 54, 0.1);
+}
+
+.btn-secondary:active, .reset-btn:active {
+  background-color: rgba(255, 126, 54, 0.2);
+  transform: scale(0.98);
+}
+
+/* BlockerTab Styles */
+.toggle-switch {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggle-btn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.toggle-btn:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.toggle-btn.active {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.day-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.day-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.day-btn.selected {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.time-range-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.time-range-item input[type="time"] {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-btn {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.add-btn:hover {
+  background-color: #e5e5e5;
+}
+
+.remove-btn {
+  background-color: transparent;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.remove-btn:hover {
+  color: #f44336;
+}
+
+.remove-btn[disabled] {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.add-site-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add-site-form input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-site-form button {
+  padding: 8px 16px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.blocked-sites-list {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.no-sites {
+  color: #999;
+  text-align: center;
+  padding: 16px;
+}
+
+.blocked-site-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.blocked-site-item:last-child {
+  border-bottom: none;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 1000;
+  opacity: 0;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toast::before {
+  content: "✓";
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Dark theme adjustments */
+body.theme-dark .toast {
+  background-color: var(--card-bg);
+  border-color: var(--color-primary);
+}
+
+/* Confirm Dialog */
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+  animation: fadeIn 0.2s ease;
+}
+
+.confirm-dialog {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  animation: slideUp 0.3s ease;
+  border: 1px solid var(--color-primary-light);
+}
+
+.confirm-dialog p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.confirm-cancel, .confirm-ok {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.confirm-cancel {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--text-secondary);
+}
+
+.confirm-cancel:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.confirm-ok {
+  background: linear-gradient(45deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: white;
+  border: none;
+}
+
+.confirm-ok:hover {
+  filter: brightness(1.1);
+}
+
+/* Dark theme adjustments */
+body.theme-dark .confirm-dialog {
+  background-color: var(--card-bg);
+  border-color: var(--color-primary);
+}
+
+body.theme-dark .confirm-cancel:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+} 

@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f5f5f5; /* Light mode background */
+  color: #333333; /* Primary text color */
+  line-height: 1.6;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blocked-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.blocked-card {
+  background-color: white;
+  border-radius: 12px; /* Large border radius for cards */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* Card shadow */
+  padding: 40px;
+  text-align: center;
+}
+
+.blocked-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 28px; /* Extra large title */
+  margin-bottom: 16px;
+  color: #FF7E36; /* Primary orange */
+  font-weight: 700; /* Bold */
+}
+
+h3 {
+  font-size: 20px; /* Medium title */
+  margin-bottom: 16px;
+  color: #333333;
+  font-weight: 600; /* Semi-bold */
+}
+
+.blocked-message {
+  font-size: 18px;
+  margin-bottom: 24px; /* Large spacing */
+}
+
+.time-info, .stats-info {
+  margin-bottom: 24px; /* Large spacing */
+}
+
+.timer-info, .schedule-info {
+  background-color: #F5F5F5; /* Ultra light gray background */
+  border-radius: 8px; /* Medium border radius */
+  padding: 16px; /* Medium padding */
+  margin-bottom: 24px; /* Large spacing */
+}
+
+.timer-info p, .schedule-info p {
+  margin-bottom: 8px; /* Small spacing */
+}
+
+.timer-info p:last-child, .schedule-info p:last-child {
+  margin-bottom: 0;
+}
+
+.blocked-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Medium spacing */
+  margin-bottom: 24px; /* Large spacing */
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px; /* Medium border radius for buttons */
+  font-size: 16px; /* Small title size */
+  font-weight: 600; /* Semi-bold */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(45deg, #FF7E36 0%, #FF9A5A 100%); /* Orange gradient */
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 126, 54, 0.25); /* Active shadow */
+}
+
+.primary-btn:hover {
+  box-shadow: 0 6px 12px rgba(255, 126, 54, 0.3);
+  transform: translateY(-2px);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(255, 126, 54, 0.2);
+}
+
+.motivation {
+  font-size: 16px;
+  color: #666666; /* Medium gray text */
+  font-style: italic;
+  margin-top: 16px; /* Medium spacing */
+}
+
+/* Add dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222222; /* Dark gray background */
+    color: #DDDDDD; /* Light gray text */
+  }
+  
+  .blocked-card {
+    background-color: #333333; /* Medium gray background */
+  }
+  
+  h3, .blocked-message, .time-info, .stats-info {
+    color: #DDDDDD; /* Light gray text */
+  }
+  
+  .timer-info, .schedule-info {
+    background-color: #444444; /* Slightly lighter gray */
+    color: #DDDDDD;
+  }
+  
+  .motivation {
+    color: #AAAAAA; /* Very light gray text */
+  }
+} 

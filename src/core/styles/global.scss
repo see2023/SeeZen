@@ -1,0 +1,196 @@
+@import 'variables';
+@import 'mixins';
+
+// 全局重置和基础样式
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// 应用光明/暗黑主题
+body.theme-light {
+  @include light-theme;
+}
+
+body.theme-dark {
+  @include dark-theme;
+}
+
+// 系统偏好暗黑模式
+@media (prefers-color-scheme: dark) {
+  body:not(.theme-light) {
+    @include dark-theme;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body:not(.theme-dark) {
+    @include light-theme;
+  }
+}
+
+// 基础排版样式
+h1 {
+  @include heading-xxl;
+  margin-bottom: $spacing-md;
+}
+
+h2 {
+  @include heading-xl;
+  margin-bottom: $spacing-sm;
+}
+
+h3 {
+  @include heading-lg;
+  margin-bottom: $spacing-xs;
+}
+
+h4 {
+  @include heading-md;
+  margin-bottom: $spacing-xs;
+}
+
+p {
+  @include body-text;
+  margin-bottom: $spacing-sm;
+}
+
+small {
+  @include small-text;
+}
+
+// 链接样式
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-fast $timing-function;
+  
+  &:hover {
+    color: $color-primary-dark;
+    text-decoration: underline;
+  }
+  
+  &:focus {
+    @include focus-outline;
+  }
+}
+
+// 按钮基础样式
+button {
+  cursor: pointer;
+  font-family: $font-family-base;
+  
+  &:focus {
+    @include focus-outline;
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.btn-primary {
+  @include button-primary;
+}
+
+.btn-secondary {
+  @include button-secondary;
+}
+
+// 辅助类
+.card {
+  @include card;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.truncate {
+  @include truncate;
+}
+
+// 布局辅助
+.container {
+  width: 100%;
+  padding-right: $spacing-sm;
+  padding-left: $spacing-sm;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-xs {
+  gap: $spacing-xs;
+}
+
+.gap-sm {
+  gap: $spacing-sm;
+}
+
+.gap-md {
+  gap: $spacing-md;
+}
+
+// 边距辅助类
+.mt-xs { margin-top: $spacing-xs; }
+.mr-xs { margin-right: $spacing-xs; }
+.mb-xs { margin-bottom: $spacing-xs; }
+.ml-xs { margin-left: $spacing-xs; }
+
+.mt-sm { margin-top: $spacing-sm; }
+.mr-sm { margin-right: $spacing-sm; }
+.mb-sm { margin-bottom: $spacing-sm; }
+.ml-sm { margin-left: $spacing-sm; }
+
+.mt-md { margin-top: $spacing-md; }
+.mr-md { margin-right: $spacing-md; }
+.mb-md { margin-bottom: $spacing-md; }
+.ml-md { margin-left: $spacing-md; }
+
+.pt-xs { padding-top: $spacing-xs; }
+.pr-xs { padding-right: $spacing-xs; }
+.pb-xs { padding-bottom: $spacing-xs; }
+.pl-xs { padding-left: $spacing-xs; }
+
+.pt-sm { padding-top: $spacing-sm; }
+.pr-sm { padding-right: $spacing-sm; }
+.pb-sm { padding-bottom: $spacing-sm; }
+.pl-sm { padding-left: $spacing-sm; }
+
+.pt-md { padding-top: $spacing-md; }
+.pr-md { padding-right: $spacing-md; }
+.pb-md { padding-bottom: $spacing-md; }
+.pl-md { padding-left: $spacing-md; } 

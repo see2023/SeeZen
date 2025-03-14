@@ -1,0 +1,109 @@
+{
+  "common": {
+    "back": "Back",
+    "save": "Save",
+    "reset": "Reset to Defaults",
+    "settings": "Settings",
+    "saved": "Settings saved!",
+    "reset_confirm": "Reset all settings to default values?",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "settings": {
+    "title": "SeeZen Settings",
+    "tabs": {
+      "timer": "Timer",
+      "blocker": "Website Blocker",
+      "appearance": "Appearance"
+    },
+    "timer": {
+      "title": "Timer Settings",
+      "work_duration": "Work Duration (minutes)",
+      "short_break": "Short Break Duration (minutes)",
+      "long_break": "Long Break Duration (minutes)",
+      "long_break_interval": "Long Break Interval (sessions)",
+      "auto_start_breaks": "Auto-start breaks",
+      "auto_start_pomodoros": "Auto-start work sessions"
+    },
+    "sounds": {
+      "title": "Sound Settings",
+      "work_complete": "Work Complete Sound",
+      "break_complete": "Break Complete Sound",
+      "volume": "Sound Volume",
+      "preview": "Preview Sound",
+      "none": "None",
+      "bell": "Bell",
+      "bell_ding": "Bell Ding",
+      "door_close": "Door Close",
+      "timer": "Timer",
+      "ticktock": "Tick Tock"
+    },
+    "blocker": {
+      "title": "Website Blocker",
+      "mode_title": "Blocking Mode",
+      "pomodoro_mode": "Pomodoro Mode",
+      "schedule_mode": "Schedule Mode",
+      "pomodoro_blocking": "Pomodoro Blocking",
+      "schedule_blocking": "Schedule Blocking",
+      "enable_work": "Block websites during work sessions",
+      "enable_breaks": "Block websites during breaks",
+      "enable_schedule": "Enable scheduled blocking",
+      "work_days": "Work Days",
+      "work_hours": "Work Hours",
+      "to": "to",
+      "add_time_range": "Add Time Range",
+      "blocked_sites": "Blocked Websites",
+      "blocked_sites_placeholder": "Enter website domain (e.g., facebook.com)",
+      "whitelist": "Whitelist (Always Allowed)",
+      "whitelist_placeholder": "Enter one website per line (e.g. work-related.com)",
+      "add": "Add",
+      "no_sites": "No blocked sites yet. Add some above.",
+      "days": {
+        "sun": "Sun",
+        "mon": "Mon",
+        "tue": "Tue",
+        "wed": "Wed",
+        "thu": "Thu",
+        "fri": "Fri",
+        "sat": "Sat"
+      }
+    },
+    "appearance": {
+      "title": "Appearance",
+      "theme": "Theme",
+      "theme_light": "Light",
+      "theme_dark": "Dark",
+      "theme_system": "System",
+      "enable_3d": "Enable 3D elements",
+      "language": "Language",
+      "language_en": "English",
+      "language_zh": "中文 (Chinese)"
+    }
+  },
+  "timer": {
+    "start": "Start",
+    "pause": "Pause",
+    "resume": "Resume",
+    "reset": "Reset",
+    "skip": "Skip",
+    "paused": "Paused",
+    "completed": "Completed",
+    "work": "Work",
+    "shortBreak": "Short Break",
+    "longBreak": "Long Break",
+    "work_in_progress": "Working...",
+    "shortBreak_in_progress": "Taking a short break...",
+    "longBreak_in_progress": "Taking a long break...",
+    "work_complete": "Work session complete!",
+    "break_complete": "Break session complete!"
+  },
+  "notification": {
+    "time_to_break": "Time to take a break!",
+    "time_to_work": "Ready to start a new work session!"
+  },
+  "popup": {
+    "settings": "Settings",
+    "timer": "Timer",
+    "stats": "Statistics"
+  }
+} 

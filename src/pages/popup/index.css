@@ -1,0 +1,269 @@
+/* 应用设计规范中的值 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 从variables.scss提取的值 */
+  --color-primary: #FF7E36;
+  --color-primary-dark: #E65A00;
+  --color-primary-light: #FFA76C;
+  
+  --color-secondary: #FF6347;
+  --color-tertiary: #4ECDC4;
+  
+  /* 状态相关颜色 */
+  --color-work: #F44336;
+  --color-short-break: #4CAF50;
+  --color-long-break: #2196F3;
+  
+  /* 主题变量 */
+  --bg-color: #FFFFFF;
+  --card-bg: #F5F5F5;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  
+  /* 深色主题将通过body.theme-dark应用不同值 */
+}
+
+/* 深色主题 */
+body.theme-dark {
+  --bg-color: #222222;
+  --card-bg: #333333;
+  --text-color: #DDDDDD;
+  --text-secondary: #AAAAAA;
+}
+
+body {
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+                 Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 320px;
+  height: 400px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  margin-bottom: 16px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: var(--color-primary);
+}
+
+.pomodoro-counter {
+  font-size: 14px;
+  color: var(--text-secondary);
+  background-color: var(--card-bg);
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+.timer-display {
+  text-align: center;
+  padding: 24px;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.timer-display::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.timer-display.work::before {
+  background-color: var(--color-work);
+}
+
+.timer-display.shortBreak::before {
+  background-color: var(--color-short-break);
+}
+
+.timer-display.longBreak::before {
+  background-color: var(--color-long-break);
+}
+
+.timer {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.work .timer {
+  color: var(--color-work);
+}
+
+.shortBreak .timer {
+  color: var(--color-short-break);
+}
+
+.longBreak .timer {
+  color: var(--color-long-break);
+}
+
+.status {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.progress-bar {
+  height: 4px;
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  border-radius: 2px;
+  transition: width 1s linear;
+}
+
+.work .progress {
+  background-color: var(--color-work);
+}
+
+.shortBreak .progress {
+  background-color: var(--color-short-break);
+}
+
+.longBreak .progress {
+  background-color: var(--color-long-break);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  width: 100%;
+  justify-content: center;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 0;
+}
+
+.action-btn {
+  flex-basis: 45%;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #FF7E36 0%, #FFA76C 100%);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 12px rgba(255, 126, 54, 0.25);
+}
+
+.btn-primary:active {
+  filter: brightness(0.95);
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 126, 54, 0.1);
+}
+
+.btn-secondary:active {
+  background-color: rgba(255, 126, 54, 0.2);
+  transform: scale(0.98);
+}
+
+.settings-btn {
+  font-size: 14px;
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  box-shadow: none;
+  flex-basis: auto;
+}
+
+.settings-btn:hover {
+  color: var(--color-primary);
+  background-color: rgba(255, 126, 54, 0.05);
+}
+
+.btn-tertiary {
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 14px;
+  padding: 8px 16px;
+  border: none;
+}
+
+.btn-tertiary:hover {
+  color: var(--color-primary);
+  background-color: rgba(255, 126, 54, 0.05);
+}
+
+/* 添加动画效果 */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.timer-display.running .timer {
+  animation: pulse 2s infinite;
+} 

@@ -1,0 +1,55 @@
+/* Sound preview button styles */
+.sound-setting {
+  position: relative;
+}
+
+.sound-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 添加声音下拉框宽度限制 */
+.sound-control select {
+  width: 160px; /* 设置固定宽度 */
+  flex-shrink: 0; /* 防止缩小 */
+}
+
+.preview-sound-btn {
+  background-color: var(--color-secondary);
+  color: rgb(117, 58, 58);
+  border: white;
+  border-radius: 4px;
+  padding: 10px 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap; /* 防止按钮文字换行 */
+}
+
+.preview-sound-btn:hover {
+  background-color: var(--color-primary);
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sound-control {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .sound-control select {
+    width: 100%; /* 在小屏幕上占满宽度 */
+  }
+  
+  .preview-sound-btn {
+    margin-top: 5px;
+  }
+} 

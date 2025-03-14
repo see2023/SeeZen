@@ -1,0 +1,88 @@
+// 颜色系统
+// 主色调
+$color-primary: #FF7E36;
+$color-primary-dark: #E65A00;
+$color-primary-light: #FFA76C;
+
+// 辅助色调
+$color-secondary: #FF6347; // 番茄红
+$color-tertiary: #4ECDC4; // 青绿色
+
+// 中性色 - 深色主题
+$color-dark-bg: #222222;
+$color-dark-card: #333333;
+$color-dark-text: #DDDDDD;
+$color-dark-text-secondary: #AAAAAA;
+
+// 中性色 - 浅色主题
+$color-light-bg: #FFFFFF;
+$color-light-card: #F5F5F5;
+$color-light-text: #333333;
+$color-light-text-secondary: #666666;
+
+// 功能色
+$color-success: #4CAF50;
+$color-warning: #FFC107;
+$color-error: #F44336;
+$color-info: #2196F3;
+
+// 特殊效果
+$gradient-primary: linear-gradient(45deg, #{$color-primary} 0%, #{$color-primary-light} 100%);
+$shadow-default: 0 4px 8px rgba(0, 0, 0, 0.1);
+$shadow-active: 0 6px 12px rgba(255, 126, 54, 0.25);
+
+// 排版
+$font-family-base: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+                   Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+// 字体大小
+$font-size-xxl: 28px;
+$font-size-xl: 24px;
+$font-size-lg: 20px; 
+$font-size-md: 16px;
+$font-size-base: 14px;
+$font-size-sm: 12px;
+$font-size-xs: 10px;
+
+// 字重
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+$font-weight-normal: 400;
+
+// 行高
+$line-height-compact: 1.2;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.8;
+
+// 间距
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+
+// 圆角
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-circle: 50%;
+
+// 动画
+$transition-fast: 150ms;
+$transition-normal: 200ms;
+$transition-slow: 300ms;
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+// 响应式断点
+$breakpoint-sm: 320px;
+$breakpoint-md: 400px;
+$breakpoint-lg: 600px;
+
+// Z-index层级管理
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal: 1040;
+$z-index-popover: 1050;
+$z-index-tooltip: 1060; 

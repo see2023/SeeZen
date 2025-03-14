@@ -1,0 +1,109 @@
+{
+  "common": {
+    "back": "返回",
+    "save": "保存",
+    "reset": "恢复默认",
+    "settings": "设置",
+    "saved": "设置已保存！",
+    "reset_confirm": "确定要将所有设置重置为默认值吗？",
+    "cancel": "取消",
+    "confirm": "确定"
+  },
+  "settings": {
+    "title": "SeeZen 设置",
+    "tabs": {
+      "timer": "计时器",
+      "blocker": "网站拦截",
+      "appearance": "外观"
+    },
+    "timer": {
+      "title": "计时器设置",
+      "work_duration": "工作时长（分钟）",
+      "short_break": "短休息时长（分钟）",
+      "long_break": "长休息时长（分钟）",
+      "long_break_interval": "长休息间隔（轮次）",
+      "auto_start_breaks": "自动开始休息",
+      "auto_start_pomodoros": "自动开始工作"
+    },
+    "sounds": {
+      "title": "音效设置",
+      "work_complete": "工作完成音效",
+      "break_complete": "休息完成音效",
+      "volume": "音量",
+      "preview": "试听音效",
+      "none": "无",
+      "bell": "铃声",
+      "bell_ding": "叮铃声",
+      "door_close": "关门声",
+      "timer": "计时器声",
+      "ticktock": "滴答声"
+    },
+    "blocker": {
+      "title": "网站拦截器",
+      "mode_title": "拦截模式",
+      "pomodoro_mode": "番茄钟模式",
+      "schedule_mode": "时间表模式",
+      "pomodoro_blocking": "番茄钟拦截",
+      "schedule_blocking": "时间表拦截",
+      "enable_work": "在工作时段拦截网站",
+      "enable_breaks": "在休息时段拦截网站",
+      "enable_schedule": "启用时间表拦截",
+      "work_days": "工作日",
+      "work_hours": "工作时间",
+      "to": "至",
+      "add_time_range": "添加时间段",
+      "blocked_sites": "被拦截的网站",
+      "blocked_sites_placeholder": "输入网站域名（例如：facebook.com）",
+      "whitelist": "白名单（始终允许）",
+      "whitelist_placeholder": "每行输入一个网站（例如：work-related.com）",
+      "add": "添加",
+      "no_sites": "暂无拦截网站。请在上方添加。",
+      "days": {
+        "sun": "周日",
+        "mon": "周一",
+        "tue": "周二",
+        "wed": "周三",
+        "thu": "周四",
+        "fri": "周五",
+        "sat": "周六"
+      }
+    },
+    "appearance": {
+      "title": "外观",
+      "theme": "主题",
+      "theme_light": "浅色",
+      "theme_dark": "深色",
+      "theme_system": "跟随系统",
+      "enable_3d": "启用3D元素",
+      "language": "语言",
+      "language_en": "English (英文)",
+      "language_zh": "中文"
+    }
+  },
+  "timer": {
+    "start": "开始",
+    "pause": "暂停",
+    "resume": "继续",
+    "reset": "重置",
+    "skip": "跳过",
+    "paused": "已暂停",
+    "completed": "已完成",
+    "work": "工作",
+    "shortBreak": "短休息",
+    "longBreak": "长休息",
+    "work_in_progress": "工作中...",
+    "shortBreak_in_progress": "短休息中...",
+    "longBreak_in_progress": "长休息中...",
+    "work_complete": "工作阶段完成！",
+    "break_complete": "休息时间结束！"
+  },
+  "popup": {
+    "settings": "设置",
+    "timer": "计时器",
+    "stats": "统计"
+  },
+  "notification": {
+    "time_to_break": "该休息一下了！",
+    "time_to_work": "准备开始新的工作吧！"
+  }
+} 
