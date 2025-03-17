@@ -136,7 +136,7 @@ const Options: React.FC = () => {
 			});
 		}
 
-		// Apply theme, language and 3D changes immediately
+		// Apply theme, language immediately
 		if (newSettings.theme !== undefined && newSettings.theme !== localSettings.theme) {
 			setTheme(newSettings.theme);
 		}

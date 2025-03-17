@@ -2,7 +2,7 @@
 	"manifest_version": 3,
 	"name": "SeeZen",
 	"version": "1.0.0",
-	"description": "An immersive Pomodoro timer and website blocker with 3D visualization",
+	"description": "An immersive Pomodoro timer and website blocker",
 	"permissions": [
 	  "storage",
 	  "alarms",

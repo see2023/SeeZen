@@ -1,7 +1,7 @@
 {
   "name": "seezen",
   "version": "1.0.0",
-  "description": "An immersive Pomodoro timer and website blocker with 3D visualization",
+  "description": "An immersive Pomodoro timer and website blocker",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,10 +14,9 @@
     "focus",
     "productivity",
     "website-blocker",
-    "chrome-extension",
-    "3d"
+    "chrome-extension"
   ],
-  "author": "",
+  "author": "see2023",
   "license": "Apache-2.0",
   "dependencies": {
     "@crxjs/vite-plugin": "^2.0.0-beta.23",
