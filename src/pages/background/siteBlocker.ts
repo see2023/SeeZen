@@ -34,43 +34,6 @@ function getBlockedPageUrl(originalUrl?: string): string {
   return `${blockedPageUrl}?${params.toString()}`;
 }
 
-// 强制清除所有阻止规则和状态
-export async function forceCleanupAllBlockingRules() {
-  console.log('强制清除所有网站阻止规则');
-  
-  try {
-    // 1. 清除所有 declarativeNetRequest 规则
-    const existingRules = await chrome.declarativeNetRequest.getDynamicRules();
-    const existingRuleIds = existingRules.map(rule => rule.id);
-    
-    if (existingRuleIds.length > 0) {
-      await chrome.declarativeNetRequest.updateDynamicRules({
-        removeRuleIds: existingRuleIds
-      });
-      console.log(`已移除 ${existingRuleIds.length} 条动态规则`);
-    }
-    
-    // 2. 检查并更新存储中的阻止设置
-    const result = await chrome.storage.sync.get(['blockerSettings']);
-    if (result.blockerSettings) {
-      // 确保所有阻止功能都被禁用
-      const updatedSettings = {
-        ...result.blockerSettings,
-        enabledDuringWork: false,
-        scheduleEnabled: false
-      };
-      
-      // 保存更新后的设置回存储
-      await chrome.storage.sync.set({ blockerSettings: updatedSettings });
-      console.log('已更新阻止设置，确保所有阻止功能已禁用');
-    }
-    
-    console.log('所有阻止规则和状态已清除');
-  } catch (error) {
-    console.error('清除阻止规则时出错:', error);
-  }
-}
-
 // 设置导航拦截器，处理所有网站阻止
 export function setupWebNavigationBlocker() {
   console.log('初始化网站阻止器');
